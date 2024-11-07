@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Rowan",
+      "lastName": "Nikolaus",
+      "birthDate": "January",
+      "birthPlace": "Germany",
+      "currentAddress": "11233",
+      "sex": "male"
+    },
+    {
+      "id": "2",
+      "firstName": "Kassandra",
+      "lastName": "Haley"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "name": "apple",
+      "requiredFields": [
+        "firstName",
+        "lastName",
+        "birthDate",
+        "birthPlace",
+        "sex",
+        "currentAddress"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "google",
+      "requiredFields": [
+        "firstName",
+        "lastName",
+        "birthDate",
+        "birthPlace"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "d055",
+      "userId": "1",
+      "clientId": "2"
+    },
+    {
+      "id": "0859",
+      "userId": "1",
+      "clientId": "1"
+    }
+  ]
+}

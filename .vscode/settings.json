@@ -1,0 +1,39 @@
+{
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": false,
+  "files.autoSave": "off",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "vsicons.presets.angular": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.nx": true,
+    "**/.cache": true,
+    "**/build": true,
+    "**/dist": true,
+    "package-lock.json": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.cache/**": true,
+    "**/.nx/**": true,
+    "**/.idea/**": true,
+    "**/dist/**": true,
+    "**/libs/shared/**": true,
+    "**/build/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}

@@ -1,1 +1,45 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div class="w-full">
+  <div class="flex flex-col items-center justify-center p-5 gap-5">
+    <h1 class="text-4xl font-bold cursor-pointer" [routerLink]="['/']">
+      API Gateway
+    </h1>
+
+    <h3>
+      Logged in user: {{ connectStore.user()?.firstName }}
+      {{ connectStore.user()?.lastName }}. ID: {{ connectStore.user()?.id }}
+    </h3>
+
+    <h4 class="text-xl text-lime-600">Select a client</h4>
+
+    <div class="flex flex-row gap-14">
+      @for (item of connectStore.clients(); track item.id) {
+      <div>
+        <button
+          (click)="selectClient(item.id)"
+          class="bg-lime-800 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-center"
+        >
+          {{ item.name }} (ID: {{ item.id }})
+        </button>
+      </div>
+      }
+    </div>
+
+    <app-connect-client-page></app-connect-client-page>
+
+    @if(connectStore.connections().length) {
+    <h4 class="text-xl text-blue-800">Current connections</h4>
+
+    <button
+      (click)="reloadConnections()"
+      class="bg-red-800 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-center"
+    >
+      Reload connections
+    </button>
+
+    @for (item of connectStore.connections(); track item.id) {
+    <div class="text-left">
+      User ID: {{ item.userId }} - Client ID: {{ item.clientId }}
+    </div>
+    } }
+  </div>
+</div>

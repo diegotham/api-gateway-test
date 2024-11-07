@@ -1,0 +1,30 @@
+<div [formGroup]="form" class="mb-4">
+  <label
+    class="block text-gray-700 text-sm font-bold mb-2"
+    [attr.for]="question.key"
+    >{{ question.label }}</label
+  >
+  <div>
+    @switch (question.controlType) { @case ('textbox') {
+    <input
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      [formControlName]="question.key"
+      [id]="question.key"
+      [type]="question.type"
+    />
+    } @case ('dropdown') {
+    <select
+      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      [id]="question.key"
+      [formControlName]="question.key"
+    >
+      @for (opt of question.options; track opt.key) {
+      <option [value]="opt.key">{{ opt.value }}</option>
+      }
+    </select>
+    } }
+  </div>
+  @if (!isValid) {
+  <div class="errorMessage">{{ question.label }} is required</div>
+  }
+</div>
